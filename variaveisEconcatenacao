@@ -1,0 +1,22 @@
+#Prever e executar o exemplo 1
+  # Adicione comentários ao código abaixo para explicar o que ele faz
+
+firstName = "Andy"
+#atribui Andy à variavel firstName
+print(firstName)
+#imprime a variável firstName: Andy
+
+#Prever e executar o exemplo 2
+  # Adicione comentários ao código abaixo para explicar o que ele faz
+
+lastName = "Colley"
+#atribui Colley à variavel lastName
+fullName = firstName + " " + lastName
+#concatena na variável fullName as outras duas, separadas por um espaço
+print(fullName)
+#imprime a variável fullName concatenada: Andy Colley
+
+#Prever e executar o exemplo 3
+  # Adicione comentários ao código abaixo para explicar o que ele faz
+print("Hello " + firstName + ". Your full name is " + fullName + ".")
+#imprime, usando concatenação: Hello Andy. Your full name is Andy Colley.
