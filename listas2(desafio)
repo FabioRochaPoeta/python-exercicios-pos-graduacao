@@ -1,0 +1,47 @@
+# Utilizando listas que perguntem o nome de 4 pessoas e 5 perguntas sobre um crime. As perguntas são:
+# "Telefonou para a vítima?"
+# "Esteve no local do crime?"
+# "Mora perto da vítima?"
+# “Tinha dívidas com a vítima?"
+# "Já trabalhou com a vítima?“
+# As respostas deverão ser (S ou N)
+
+# O programa deve no final emitir uma classificação sobre a
+# participação de cada pessoa no crime. Se a pessoa responder
+# positivamente a 2 questões ela deve ser classificada como
+# "Suspeita“; entre 3 e 4 como "Cúmplice" e; 5 como "Assassino". Caso contrário, ele será classificado como "Inocente".
+
+# Exiba o nome de cada pessoa e sua classificação.
+
+suspeitos = []
+for i in range(4):
+  pessoa = []
+  pessoa.append(input('Nome: '))
+  pessoa.append(input('Telefonou para a vítima? (S/N): ').lower())
+  pessoa.append(input('Esteve no local do crime? (S/N): ').lower())
+  pessoa.append(input('Mora perto da vítima? (S/N): ').lower())
+  pessoa.append(input('Tinha dívidas com a vítima? (S/N): ').lower())
+  pessoa.append(input('Já trabalhou com a vítima? (S/N): ').lower())
+  suspeitos.append(pessoa)
+
+print('\nClassificação:\n')
+
+for suspeito in suspeitos:
+  if suspeito[1:].count('s') == 5:
+    print(f'{suspeito[0]}: Assassino(a)')
+  elif (suspeito[1:].count('s') == 3) or (suspeito[1:].count('s') == 4):
+    print(f'{suspeito[0]}: Cúmplice')
+  elif suspeito[1:].count('s') == 2:
+    print(f'{suspeito[0]}: Suspeito(a)')
+  else:
+    print(f'{suspeito[0]}: Inocente')
+
+#obs: Talvez uma solução mais bonita fosse por dicionários, que acabei de descobrir no sololearn :)
+#
+# ages = {
+#    "Dave": 24,
+#    "Mary": 42,
+#    "John": 58
+# }
+# print(ages["Dave"])
+# print(ages["Mary"])
