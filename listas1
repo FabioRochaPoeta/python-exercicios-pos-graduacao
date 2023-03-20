@@ -1,0 +1,153 @@
+# #1 Ler uma lista de 5 números float e mostre-os na ordem inversa.
+
+listaNumerosReais = []
+print ('Informe os 5 números reais: ')
+for i in range(5):
+	listaNumerosReais.append(float(input()))
+print (listaNumerosReais[::-1]) 
+
+# #2 Ler uma lista de 5 números inteiros e mostre cada número juntamente com a sua posição na lista.
+
+listaNumerosInteiros = []
+print ('Informe os 5 números inteiros: ')
+for i in range(5):
+	listaNumerosInteiros.append(int(input()))
+for i in range(5):
+  print (f'\nNúmero:  {listaNumerosInteiros[i]}')
+  print (f'Posição: {i+1}\n\n')
+
+#3 Faça um Programa que leia 4 notas, armazene-as em uma lista e mostre as notas e a média na tela.
+
+listaNumerosReais = []
+soma = 0
+media = 0
+
+print ('Informe as 4 notas: ')
+for i in range(4):
+  listaNumerosReais.append(float(input()))
+  soma += listaNumerosReais[i]
+
+for i in range(4):
+  print (f'\nNota {i+1}:  {listaNumerosReais[i]}')
+
+media = soma / len(listaNumerosReais)
+
+print (f'\n\nMédia: {media}')
+
+#4 Ler um lista com 5 idades e exibir a maior e menor
+
+maior = -9999999999999999999
+menor = 9999999999999999999
+listaNumerosInteiros = []
+
+print ('Informe as 5 idades: ')
+for i in range(5):
+  listaNumerosInteiros.append(int(input()))
+  if listaNumerosInteiros[i] > maior:
+    maior = listaNumerosInteiros[i]
+  if listaNumerosInteiros[i] < menor:
+    menor = listaNumerosInteiros[i]
+    
+print (f'Maior:  {maior}')
+print (f'Menor:  {menor}')
+
+#5 Utilize a lista a seguir:
+# [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
+lista = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
+# e apresente:
+#
+# o intervalo de 1 a 9
+
+print('\nIntervalo de 1 a 9:\n')
+print(lista[1:10])
+
+# os elementos pares dessa lista
+
+print('\nPares:\n')
+for i in range(len(lista)):
+   if lista[i] % 2 == 0:
+     print(i)
+
+
+# os elementos impares dessa lista
+
+print('\nÍmpares:\n')
+for i in range(len(lista)):
+   if lista[i] % 2 != 0:
+     print(i)
+     
+# todos os multiplos de 2 e 3
+
+print('\nMúltiplos de 2 e 3:\n')
+for i in lista:
+   if (i % 2 == 0) and (i % 3 == 0) and (i != 0):
+     print(i)
+     
+# a lista reversa
+
+print('\nLista reversa:\n')
+lista.reverse()
+print (lista)
+lista.reverse()
+     
+# a razao entre a soma do intervalo de 2 a 6 e o intervalo de 3 a 9 em float.
+
+print('\nRazão entre a soma do intervalo de 2 a 6 e o intervalo de 3 a 9:\n')
+soma1 = sum(lista[2:7])
+soma2 = sum(lista[3:10])
+print(f'A soma de {lista[2:7]}')
+print(f'Dividido pela soma de {lista[3:10]} é:')
+print(soma1/soma2)
+
+
+#6 reescreva o exercicio anterior, utilizando funções
+
+#criando as funções:
+
+def intervalode1a9(lista):
+  print('\nIntervalo de 1 a 9:\n')
+  return (lista[1:10])
+  
+def pares(lista):
+  print('\nPares:\n')
+  for i in range(13):
+   if lista[i] % 2 == 0:
+     print(i)
+
+def impares(lista):
+  print('\nÍmpares:\n')
+  for i in range(13):
+   if lista[i] % 2 != 0:
+     print(i)
+
+def mult23(lista):
+  print('\nMúltiplos de 2 e 3:\n')
+  for i in range(13):
+   if (lista[i] % 2 == 0) and (lista[i] % 3 == 0) and (lista[i] != 0):
+     print(i)
+
+def imprimereverse(lista):
+  print('\nLista reversa:\n')
+  lista.reverse()
+  print (lista)
+  lista.reverse()
+
+def razao(lista):
+  print('\nRazão entre a soma do intervalo de 2 a 6 e o intervalo de 3 a 9:\n')
+  soma1 = sum(lista[2:7])
+  soma2 = sum(lista[3:10])
+  print(f'A soma de {lista[2:7]}')
+  print(f'Dividido pela soma de {lista[3:10]} é:')
+  print(soma1/soma2)
+  
+#chamando as funções:
+  
+print(intervalode1a9(lista))
+pares(lista)
+impares(lista)
+mult23(lista)
+imprimereverse(lista)
+razao(lista)
+
