@@ -1,0 +1,291 @@
+# #-------------------> DIFICULDADE 1 <---------------------------
+# # Um algoritmo capaz de fazer uma contagem de 1 ao 9.
+# for i in range(9):
+#   print(i+1)
+
+# # Recebe como entrada o raio do círculo em centímetros e vai mostrar no terminal pro usuário o resultado da fórmula para calcular a área.
+
+# raio = float(input('\nEntre com o raio: '))
+
+# def calcula_area(raio):
+#   return (raio **2) * (3.141592653589793)
+
+# print(f'Área do círculo com esse raio: {calcula_area(raio)}\n')
+
+# # Desenvolva um programa que leia um número inteiro qualquer e que apresente o número informado, seguido do seu antecessor e do seu sucessor
+
+# i = int(input('Digite um No inteiro: '))
+# print(f'Antecessor: {i-1}')
+# print(f'Número    : {i}')
+# print(f'Sucessor  : {i+1}\n')
+
+# # Desenvolva um programa que leia um número inteiro qualquer e que informe se este número é par ou impar
+
+# i = int(input('Digite um No inteiro: '))
+# if ((i % 2) == 0):
+#   print('É par\n')
+# else:
+#   print('É ímpar\n')
+  
+# # Um algoritmo que recebe uma temperatura em graus Celsius e retorna a temperatura em graus Fahrenheit.
+
+# i = float(input('Digite a temperatura em graus Celsius: '))
+# print(f'A temperatura em graus Fahrenheit é: {(i * 9 / 5) + 32}\n')
+
+# # Código capaz de criar uma lista que adiciona 5 número reais e imprimir a lista na ordem inversa.
+
+# list = []
+# for i in range(5):
+#   list.append(input('Digite o número: '))
+# print(f'{list[::-1]}\n')
+
+# #-------------------> DIFICULDADE 2 <---------------------------
+# # Desenvolva um programa que tenha uma função que verifique se um número inteiro qualquer é par ou impar
+
+# def parimpar(i):
+#  i = int(input('Digite um No inteiro: '))
+#  if ((i % 2) == 0):
+#    return('É par\n')
+#  else:
+#    return('É ímpar\n')
+
+# print(parimpar(i))
+
+# # Desenvolva um programa que leia quatro notas e que apresente a média final
+
+# i     = 0
+# nota  = 0
+# soma  = 0
+# media = 0
+
+# for i in range(4):
+#   nota = float(input('Nota: '))
+#   soma += nota
+  
+# media = soma / 4
+
+# print(f'Média: {media}\n')
+
+# # Considere o seguinte dicionário: {'m1': {'m2': 'Olá Mundo'}}. Carregue e apresente a mensagem "Olá Mundo" contida no dicionário
+
+# dic1 = {'m1': {'m2': 'Olá Mundo'}}
+# dic2 = dic1['m1']
+# print(dic2.get('m2', 0))
+
+# # Algoritmo que recebe 5 valores de entrada, no final irá printar duas listas, a primeira com os valores informados e a segunda com todos os valores ao quadrado.
+
+# list = []
+# listaoquadrado = []
+
+# for i in range(5):
+#   entrada = float(input('\nValor: ')) #assumi número real de entrada
+#   list.append(entrada)
+#   listaoquadrado.append(entrada ** 2)
+  
+# print(list)
+# print(listaoquadrado)
+
+# # Programa que recebe como entrada 6 valores inteiros, no final ele exibe uma lista com os 6 valores informados e qual o seu maior elemento.
+
+# list = []
+
+# for i in range(6):
+#   entrada = int(input('\nValor: ')) 
+#   list.append(entrada)
+    
+# print('Lista: ',list)
+# print('Maior valor:',max(list))
+
+# # Algoritmo que solicita três lados de um triângulo, com esses dados o nosso programa deve informar a nomenclatura dos triângulos.
+# # Triângulo Equilátero: três lados iguais;
+# # Triângulo Isósceles: quaisquer dois lados iguais;
+# # Triângulo Escaleno: três lados diferentes;
+
+# a = float(input('Digite o valor do lado A do triângulo: '))
+# b = float(input('Digite o valor do lado B do triângulo: '))
+# c = float(input('Digite o valor do lado C do triângulo: '))
+
+# if (a == b == c):
+#   print('Triângulo Equilátero')
+# elif (a == b) or (a == c) or (b == c):
+#   print('Triângulo Isósceles')
+# else:
+#   print('Triângulo Escaleno')
+
+
+# # Programa capaz de solicitar 4 valores para representar a nota do aluno, em seguida armazenas os valores em uma lista, no fim mostrar as notas e a média..
+
+# lista = []
+
+# for i in range(4):
+#   entrada = int(input('\nNota: ')) 
+#   lista.append(entrada)
+
+# print('Lista de notas: ',lista)
+# print('Média:',sum(list) / 4)
+  
+
+# #-------------------> DIFICULDADE 3 <---------------------------
+
+# # Desenvolva um programa que leia um número inteiro qualquer e que apresente o número informado com duas casas decimais
+
+# entrada = int(input('\nDigite um No inteiro: ')) 
+# print(f'Com duas casas decimais: {entrada:.2f}')
+
+# Programa consiste em uma estrutura de repetição que vai fazer a leitura de vários números inteiros e impares, quando a lista chegar a 5 elementos deve parar com a leitura.
+
+# lista = []
+
+# while(len(lista) < 5):
+  
+#     entrada = int(input('\nValor: ')) 
+#     if (entrada % 2 != 0):
+#       lista.append(entrada)
+
+# print(lista)
+
+
+# Programa capaz de lidar com uma lista de 5 números inteiros e imprimir cada número juntamente com a sua posição na lista
+
+# lista = []
+
+# for i in range(5):
+#   entrada = int(input(f'\nValor {i+1}: ')) 
+#   lista.append(entrada)
+
+# for j in range(5):
+#   print(f'Número: {lista[j]}, posição: {j+1}\n')
+
+#-------------------> DIFICULDADE 4 <---------------------------
+# Programa que simula uma agenda de contatos e armazena-os em um dicionário, na questão temos 3 contatos e cada contato pode ter vários números.
+
+# print('Agenda de Contatos\n')
+
+# output_dict = {}
+# for cont in range(3):
+#   name = str(input(f'Digite o nome do contato {cont+1}: '))
+#   output_dict[name] = []
+#   condition = True
+  
+#   while condition:
+#     tel = str(input('Digite o numero do contato: '))
+#     output_dict[name].append(tel)
+#     cond_asw = str(input('Deseja incluir mais um numero? S ou N ')).capitalize()
+#     condition = True if cond_asw=="S" else False
+         
+# print(output_dict)
+
+
+# Um programa que le um dicionario com as disciplinas (chaves) e a nota (elemento), o código e capaz de dizer qual foi a menor nota.
+
+# maior = -999999999
+# menor = 999999999
+# diario = {
+#           'Português': 10,
+#           'Matemática': 8,
+#           'Biologia': 5
+#           }
+
+# for i in diario:
+#   if (float(diario[i]) >= maior):
+#     maior = float(diario[i])
+#   elif (float(diario[i]) <= menor):
+#     menor = float(diario[i])
+
+# print('Menor nota: ',menor)
+
+# Em uma competição de salto em distância cada atleta tem direito a cinco saltos. No final da série de saltos de cada atleta, o melhor e o pior resultados são eliminados. O seu resultado fica sendo a média dos três valores restantes. Você deve fazer um programa que receba o nome e as cinco distâncias alcançadas pelo atleta em seus saltos e depois informe a média dos saltos conforme a descrição acima informada (retirar o melhor e o pior salto e depois calcular a média). Faça uso de uma lista para armazenar os saltos. Os saltos são informados na ordem da execução, portanto não são ordenados. O programa deve ser encerrado quando não for informado o nome do atleta. A saída do programa deve ser conforme o exemplo abaixo:
+# Atleta: Rodrigo Curvêllo
+
+# Primeiro Salto: 6.5 m
+# Segundo Salto: 6.1 m
+# Terceiro Salto: 6.2 m
+# Quarto Salto: 5.4 m
+# Quinto Salto: 5.3 m
+
+# Melhor salto:  6.5 m
+# Pior salto: 5.3 m
+# Média dos demais saltos: 5.9 m
+
+# Resultado final:
+# Rodrigo Curvêllo: 5.9 m
+
+# lista = []
+
+# nome = input('Nome do Atleta: ')
+  
+# for i in range(5):
+#   salto = float(input(f'Salto {i+1}: '))
+#   lista.append(salto)
+
+# melhor = max(lista)
+# pior = min(lista)
+
+# print(f'Atleta: {nome}\n\n')
+# print(f'Primeiro salto: {lista[0]}\n')
+# print(f'Segundo salto: {lista[1]}\n')
+# print(f'Terceiro salto: {lista[2]}\n')
+# print(f'Quarto salto: {lista[3]}\n')
+# print(f'Quinto salto: {lista[4]}\n\n')
+# print(f'Melhor salto: {melhor}\n')
+# print(f'Pior salto: {pior}\n')
+
+
+# lista.remove(melhor)
+# lista.remove(pior)
+
+# soma = sum(lista)
+# media = soma / 3
+
+# print(f'Média dos demais saltos: {media}\n\n')
+# print(f'Resultado final: \n')
+# print(f'{nome}: {media}\n\n')
+
+#-------------------> DIFICULDADE 5 <---------------------------
+# Desenvolva um jogo de acerte o número, onde o computador escolhe um número inteiro aleatório de 0 a 10, e o usuário tem 5 tentativas para adivinhar o número
+#a) Implemente um sistema de pontuação com o seguinte comportamento: se o usuário adivinhar o número na primeira tentativa, receberá a pontuação máxima (ex. 100 pontos); se o usuário adivinhar o número na última tentativa, receberá a pontuação mínima (ex. 10 pontos); se o usuário não acertar o número, não receberá nenhum ponto.
+#b): Implemente um controle de erros. Caso o jogador digite um número fora da faixa permitida ou caracteres não numéricos, o sistema deve notificar o jogador e solicitar o input correto.
+#c): Implemente a opção de o usuário iniciar uma nova partida. Ao finalizar uma rodada, após o resultado final, o jogo deve perguntar se o jogador quer iniciar uma nova partida e, em caso negativo, encerrar a aplicação.
+
+# from random import randint
+
+# print('#### Iniciando Jogo ####')
+
+# chute = 0
+# pontos = 0
+# cond = True
+
+# def insert_value(number):
+#   if number in range(0,11):    
+#     return number
+#   else:
+#     inp_number = int(input('Chute um número inteiro entre 0 a 10: '))
+#     return insert_value(inp_number)     
+
+# while cond: 
+#   random = randint(0, 10)
+  
+#   for chance in range(5):  
+#     chute = insert_value(int(input('Chute um número inteiro entre 0 a 10: ')))    
+  
+#     if chute == random and chance == 0:
+#       pontos = 100
+#       print(f'Parabéns, você venceu! O número era {random} e você ainda tinha {5-chance} chances. Ganhou {pontos} pontos.')
+#       break
+  
+#     else:       
+#       if chance < 4 and chute ==random :
+#         pontos = 15 * chance
+#         print(f'você acertou na chance {chance+1}, com a pontuaçao {pontos}')
+#         break
+  
+#       elif chance ==4 and chute==random:
+#         pontos = 10
+#         print(f'você acertou na chance {chance+1}, com a pontuaçao {pontos}')
+
+#   new = str(input('Não acertou. Zero Pontos. Deseja iniciar novo jogo? S ou N ')).capitalize()
+#   cond= True if new == "S" else False
+            
+
+# print('#### Fim do Jogo ####')
+
