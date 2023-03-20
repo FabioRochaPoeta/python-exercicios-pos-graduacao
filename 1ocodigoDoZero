@@ -1,0 +1,16 @@
+import time
+
+# Fazer Tarefa
+
+print("Era uma vez...")
+print("E viveram felizes para sempre.")
+
+# extensão 1 - Escreva um programa que gere uma história com várias linhas.
+
+print("Era uma vez...\nE viveram felizes para sempre.")
+
+# extensão 2 - Escreva um programa que gere uma história com várias linhas com atraso antes da conclusão (precisei aprender a importar - na 1a linha do código)
+
+print("Era uma vez...")
+time.sleep(3)
+print("E viveram felizes para sempre.")
