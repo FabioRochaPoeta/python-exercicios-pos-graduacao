@@ -1,0 +1,107 @@
+# A Calabouço Discos é uma loja de vinis que resiste ao digital com albuns clássicos de lendas do rock. Os albuns são catalogados por: id, ano, artista, genero, titulo, preço. Os clientes são armazenados com: id, nome e idade. E as vendas da loja são armazenadas da seguinte maneira: id, id_cliente, ids_albuns (que é uma lista de IDs com os albuns que a pessoa comprou), total_da_venda.
+
+# Utilizando dicionários, crie um código para registrar as vendas e ao final apresentar o fechamento do dia, apresentando as vendas uma a uma.
+
+# Plus1: Quantas vendas foram realizadas?
+# Plus2: Qual foi o faturamento total da loja?
+# Plus3: Qual cliente mais gastou?
+# Plus4: Qual foi a maior compra?
+# Plus5: Qual é o album mais vendido?
+# Plus6: Quais sao os generos mais comprados pelas faixas de idade abaixo:
+
+#separei por letras
+  #a - 18 a 25 anos
+  #b - 25 a 35 anos
+  #c - 35 a 55 anos
+  #d - acima de 55 anos
+
+
+
+import json
+
+
+def carrega_json(filename):
+  try:
+    with open(filename) as arquivo:
+      dict_json = json.load(arquivo)
+  except:
+    print('Arquivo não encontrado, gerando um do zero.')
+    dict_json = {}
+  return dict_json
+
+
+def grava_json(filename, dict_json):
+  with open(filename, 'w') as arquivo:
+    json.dump(dict_json, arquivo, indent=4)
+
+
+def cadastra_album():
+  dict_album  = carrega_json('albuns.json')
+  id_album    = input('Digite id do álbum: ')
+  ano         = input('Digite ano do álbum: ')
+  artista     = input('Digite artista do álbum: ')
+  genero      = input('Digite gênero do álbum: ')
+  titulo      = input('Digite título do álbum: ')
+  preco       = input('Digite preço do álbum: ')
+  dict_album[id_album] = {'id_album':id_album, 'ano':ano, 'artista': artista, 'genero': genero, 'titulo': titulo,'preco': preco}
+  grava_json('albuns.json', dict_album)
+
+
+def cadastra_venda():
+  lista = []
+  id_albuns = 0
+  dict_vendas = carrega_json('vendas.json')
+  id_venda    = input('Digite id da venda: ')
+  id_cliente  = input('Digite id do cliente: ')
+  while id_albuns != '1': 
+   id_albuns   = input('Digite id do(s) álbum(ns) comprado(s) e para finalizar digite 1: ') 
+   lista.append(id_albuns)
+  total_venda = float(input('Digite o total desta venda: '))
+  dict_vendas[id_venda] = {'id_venda':id_venda, 'id_cliente': id_cliente, 'id_venda': id_venda,'id_albuns': lista, 'total_venda': total_venda}
+  grava_json('vendas.json', dict_vendas)
+  
+
+def cadastra_cliente():
+  dict_clientes = carrega_json('clientes.json')
+  id_cliente    = input('Digite id do cliente: ')
+  nome          = input('Digite nome do cliente: ')
+  idade         = input('Digite a idade do cliente: ')
+  dict_clientes[id_cliente] = {'id_cliente':id_cliente, 'nome':nome, 'idade': idade}
+  grava_json('clientes.json', dict_clientes)
+
+
+def vendas_do_dia():  
+  soma_das_vendas = 0
+  dict_vendas = carrega_json('vendas.json')
+  for id_vendas in dict_vendas:
+    soma_das_vendas += dict_vendas[id_vendas]['total_venda']
+    print(dict_vendas)
+  print(f'Total de vendas do dia: {soma_das_vendas}')
+  if soma_das_vendas == 0:
+    print('Sem vendas neste dia.')
+
+
+def menu():
+  while True:
+    opcao = int(input('\nO que deseja fazer?\n1 - Cadastrar Álbum\n2 - Cadastrar Venda\n3 - Cadastrar cliente\n4 - Apresentar fechamento do dia (vendas uma a uma)\n5 - Parar\n'))
+    if opcao == 1:
+     cadastra_album()
+    elif opcao == 2:
+     cadastra_venda()
+    elif opcao == 3:
+     cadastra_cliente()
+    elif opcao == 4:
+     vendas_do_dia()
+    elif opcao == 5:
+     break
+    else:
+      print('Opção inválida. Rode o programa novamente.')
+  
+
+menu()
+
+## Plus1: Quantas vendas foram realizadas? - contar o número de id_vendas - mas como faz???
+
+dict_vendas = carrega_json('vendas.json')
+print('\nPlus 1 - Quantas vendas foram realizadas? \n')
+print(len(dict_vendas.keys()))
