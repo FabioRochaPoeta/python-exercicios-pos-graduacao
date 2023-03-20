@@ -1,0 +1,105 @@
+#1 Faça um Programa que peça dois números e imprima o maior deles.
+
+num1 = int(input('Digite o primeiro número (inteiro): '))
+num2 = int(input('Digite o segundo número (inteiro): '))
+
+if num1 > num2:
+  print(num1)
+elif num1 ==num2:
+  print('São iguais.')
+else:
+  print(num2)
+
+#2 Faça um Programa que peça um valor e mostre na tela se o valor é positivo ou negativo.
+
+num1 = int(input('Digite o número (inteiro): '))
+
+if num1 >= 0:
+  print('É positivo.')
+else:
+  print('É negativo.')
+
+#3 Faça um Programa que verifique se uma letra digitada é "F" ou "M". Conforme a letra escrever: F - Feminino, M - Masculino, Sexo Inválido.
+
+char = (input('Digite o sexo - F (feminino) ou M (masculino): '))
+
+if char == "F" or "f":
+  print('F - Feminino.')
+elif char == "M" or "m":
+  print('M - Masculino.')
+else:
+  print('Sexo Inválido.')
+
+#4 Faça um Programa que verifique se uma letra digitada é vogal ou consoante.
+
+char=input('Digite uma letra (maiúscula ou minúscula): ')
+
+if char=='a' or char=='e' or char=='i' or char=='o' or char=='u' or char=='A' or char=='E' or char=='I' or char=='O' or char=='U':
+  print('É vogal.')
+else:
+  print('É consoante.')
+
+#5:
+# Faça um programa que pergunte o preço de três produtos e informe qual produto você deve comprar, sabendo que a decisão é sempre pelo mais barato.
+
+preco1 = float(input("Digite o preço do produto 1: "))
+preco2 = float(input("Digite o preço do produto 2: "))
+preco3 = float(input("Digite o preço do produto 3: "))
+
+if preco1 < preco2 and preco1 < preco3:
+  print(f"O produto que deve ser comprado é o 1, custando R$ {preco1}")
+elif preco2 < preco1 and preco2 < preco3:
+  print(f"O produto que deve ser comprado é o 2, custando R$ {preco2}")
+else:
+  print(f"O produto que deve ser comprado é o 3, custando R$ {preco3}")      
+
+#6:
+# Um posto está vendendo combustíveis com a seguinte tabela de descontos:
+# Álcool:
+# até 20 litros, desconto de 3% por litro
+# acima de 20 litros, desconto de 5% por litro
+# Gasolina:
+# até 20 litros, desconto de 4% por litro
+# acima de 20 litros, desconto de 6% por litro
+
+# Escreva um algoritmo que leia o número de litros vendidos, o tipo de combustível (codificado da seguinte forma: A-álcool, G-gasolina), calcule e imprima o valor a ser pago pelo cliente sabendo-se que o preço do litro da gasolina é R$ 2,50 e o preço do litro do álcool é R$ 1,90.
+
+litros = float(input("Digite a quantidade de litros: "))
+combustivel = input("Digite A para álcool ou G para gasolina: ")
+preco = 0
+
+if combustivel == "A" or combustivel == "a":
+  preco = litros * 1.9
+  if litros <= 20:
+    preco == preco - (1.9 * litros * 3 / 100)
+  else:
+    preco == preco - (1.9 * litros * 5 / 100)
+elif combustivel == "G" or combustivel == "g":
+  preco = litros * 2.5
+  if litros <= 20:
+    preco == preco - (2.5 * litros * 4 / 100)
+  else:
+    preco == preco - (2.5 * litros * 6 / 100)
+      
+print(f"O preço é R${preco}")
+
+#7:
+# Faça um Programa que peça os 3 lados de um triângulo. O programa deverá informar se os valores podem ser um triângulo. Indique, caso os lados formem um triângulo, se o mesmo é: equilátero, isósceles ou escaleno.
+# Dicas:
+# Três lados formam um triângulo quando a soma de quaisquer dois lados for maior que o terceiro;
+# Triângulo Equilátero: três lados iguais;
+# Triângulo Isósceles: quaisquer dois lados iguais;
+# Triângulo Escaleno: três lados diferentes;
+
+a = float(input('Primeiro lado: '))
+b = float(input('Segundo  lado: '))
+c = float(input('Terceiro lado: '))
+    
+if (a + b < c) or (a + c < b) or (b + c < a):
+  print('Não é triângulo.')
+elif (a == b) and (b == c):
+  print('Equilátero.')
+elif (a == b) or (a == c) or (b == c):
+  print('Isósceles.')
+else:
+  print('Escaleno.')
